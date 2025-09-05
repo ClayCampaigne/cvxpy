@@ -169,7 +169,7 @@ class Leaf(expression.Expression):
         indices: List or tuple of indices indicating the positions of non-zero elements.
         """
         if self._shape == ():
-            if indices != []:
+            if indices:
                 raise ValueError("Indices should have 0 dimensions.")
             return []
         # Attempt to form a COO_array with the indices matrix provided;

@@ -804,7 +804,7 @@ class Expression(u.Canonical):
     def __array_ufunc__(self, ufunc, method, *args, **kwargs):
         try:
             ufunc_handler = __BINARY_EXPRESSION_UFUNCS__[ufunc]
-            if kwargs == {} and \
+            if not kwargs and \
                     len(args) == 2 and \
                     args[1] is self:
                 return ufunc_handler(self, args[0])

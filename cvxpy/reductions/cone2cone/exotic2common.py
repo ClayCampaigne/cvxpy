@@ -100,7 +100,7 @@ class Exotic2Common(Canonicalization):
                  for orig_id, vid in inverse_data.cons_id_map.items()
                  if vid in solution.dual_vars}
 
-        if dvars == {}:
+        if not dvars:
             #NOTE: pre-maturely trigger return of the method in case the problem
             # is infeasible (otherwise will run into some opaque errors)
             return Solution(solution.status, solution.opt_val, pvars, dvars,
